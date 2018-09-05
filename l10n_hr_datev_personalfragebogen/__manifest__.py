@@ -5,7 +5,7 @@
 #    Odoo, Open Source Management Solution
 #
 #    Copyright (c) All rights reserved:
-#        (c) 2015  TM_FULLNAME
+#        (c) 2018  TM_FULLNAME
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -43,13 +43,19 @@ l10n_hr_datev_personalfragebogen Module Project.
     'category': 'Uncategorized',
 
     'depends': [
-        'base'
+        'base',
+        'hr',
+        'contact',
+        'base_iban',
+        'hr.holidays',
+        'hr.contract'
     ],
     'external_dependencies': {
         'python': [
         ],
     },
     'data': [
+        'views/hr_employee.xml'
     ],
     'demo': [
     ],
