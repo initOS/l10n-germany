@@ -47,13 +47,9 @@ l10n_hr_datev_personalfragebogen Module Project.
         'hr',
         'contact',
         'base_iban',
-        'hr.holidays',
-        'hr.contract'
+        'hr_holidays',
+        'hr_contract'
     ],
-    'external_dependencies': {
-        'python': [
-        ],
-    },
     'data': [
         'views/hr_employee.xml'
     ],
