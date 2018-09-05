@@ -1,0 +1,4 @@
+#. module: hr
+#: model:ir.model.fields,field_description:hr.job
+msgid "Functional Job Activity"
+msgstr "Ausgeübte Tätigkeit"

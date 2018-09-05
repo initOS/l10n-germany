@@ -11,5 +11,5 @@ from odoo.exceptions import UserError, ValidationError
 class Job(models.Model):
 
     _inherit = 'hr.job'
-    job_activity = fields.Char(string='Job Activity')
+    funcitonal_job_activity = fields.Char(string='Functional Job Activity')
     
