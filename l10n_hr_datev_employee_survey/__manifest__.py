@@ -49,7 +49,8 @@ l10n_hr_datev_personalfragebogen Module Project.
         'hr_contract'
     ],
     'data': [
-        'views/hr_datev_employee_survey.xml'
+        'views/hr_datev_employee_survey.xml',
+        'report/hr_datev_employee_survey.xml'
         #'views/hr_employee.xml'
     ],
     'demo': [
