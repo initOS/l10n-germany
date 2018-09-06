@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright 2009 Jordi Esteve <jesteve@zikzakmedia.com>
 # Copyright 2013-2017 Pedro M. Baeza <pedro.baeza@tecnativa.com>
-# Copyright 2018 IT IS AG <odoo@itis.de>
+# Copyright 2018 IT IS AG <oca@itis.de>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, fields, api, tools
