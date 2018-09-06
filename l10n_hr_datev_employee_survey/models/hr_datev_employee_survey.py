@@ -15,11 +15,32 @@ class HrDatevEmployeeSurvey(models.Model):
     _rec_name = 'name'
     _order = 'name ASC'
 
+    employee_id = fields.Many2one(
+        string=u'Employee',
+        comodel_name='hr.employee',
+        ondelete='set null',
+    )
+    
+    #personal data    
+    lastname = fields.Char(
+        string=u'lastname',
+        related='employee_id.address_home_id.lastname',
+        store=True,
+    ) 
+    birthname = fields.Char(
+        string=u'birthname',
+        related='employee_id.birthname',
+        store=True,
+    )
+    firstname = fields.Char(
+        string=u'firstname',
+        related='employee_id.address_home_id.firstname',
+        store=True,
+    )
+    
+
     #name res.partner.name
     #personal data
-    #lastname                res.partner + oca_partner_firstname  field: lastname
-    #birthname               hr.employee new field                field: birthname
-    #firstname               res.partner + oca_partner_firstname  field: firstname
     #Straße und Hausnummer   res.partner                          field: street
     #inkl. Anschriftenzusatz res.partner                          field: street2
     #PLZ                     res.partner                          field: zip
@@ -27,7 +48,6 @@ class HrDatevEmployeeSurvey(models.Model):
     #Geburtsdatum            hr.employee                          field: birthday
     #Geschlecht              hr.employee                          field: gender
     #Versicherungsnummer     hr.employee new field                field: insurance_number
-    #gem. Sozialvers.Ausweis hr.employee                          field: identification_id
     #Familienstand           hr.employee                          field: marital
 
     #nur bei fehlender Versicherungs-Nr.
@@ -77,3 +97,19 @@ class HrDatevEmployeeSurvey(models.Model):
         string=u'further particulars',
     )
     
+    #tax
+    #Identifikationsnr              hr.employee    field:identification_id
+    #Finanzamt-Nr.                  hr.employee new
+    #Steuerklasse/Faktor            hr.employee new 
+    #Kinderfreibeträge              hr.employee new
+    #Konfession                     hr.employee new
+
+    #social insurance
+    #Gesetzl. Krankenkasse         hr.employee  new
+    #Elterneigenschaft             hr.employee  computed children count field: children
+    #KV                            l10n_de_payroll needed
+    #RV                            l10n_de_payroll needed
+    #AV                            l10n_de_payroll needed
+    #PV                            l10n_de_payroll needed
+    #UV - Gefahrtarif              l10n_de_payroll needed
+
