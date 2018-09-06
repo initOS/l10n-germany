@@ -13,7 +13,7 @@ class Employee(models.Model):
     
     _inherit = ['hr.employee']
 
-    #Geburtsland
+    # Geburtsland
 
     country_of_birth = fields.Many2one(
         string=u'country_of_birth',
@@ -28,45 +28,45 @@ class Employee(models.Model):
         required=True,
     )
     
-    #Geburtsname
+    # Geburtsname
 
     birthname = fields.Char(
         string=u'birth_name',
     )
     
-    #Versicherungsnummer
+    # Versicherungsnummer
     
     insurance_number = fields.Char(
         string=u'insurance_number',
     )
     
-    #Schwerbehindert / Handicapped
-    
+    # Schwerbehindert / Handicapped
+     
     handicapped = fields.Boolean(
         string=u'handicapped',
     )
     
-    #Höchster Schulabschluss
+    # Höchster Schulabschluss
     
     highest_education = fields.Selection(
         string=u'highest_education',
         selection=[('No Education', 'Lower Secondary Education', 'Secondary Education / Equally High Education', 'Highschool Education')]
     )
     
-    #Höchste Berufsbildung
+    # Höchste Berufsbildung
     
     highest_vet_experience = fields.Selection(
         string=u'highest_vet_experience',
         selection=[('No VET', 'Completed VET', '', 'Bachelor', 'Masters Degree', 'Promotion')]
     )
 
-    #Finanzamtnummer
+    # Finanzamtnummer
 
     tax_office_number = fields.Integer(
         string=u'tax_office_number',
     )
     
-    #Steuerklasse
+    # Steuerklasse
 
     tax_class_id = fields.Selection(
         string=u'tax_class_id',
@@ -85,7 +85,7 @@ class Employee(models.Model):
         string=u'health_ensurance',
     )
 
-    #Elterneigenschaft
+    # Elterneigenschaft
         
     parenthood = fields.Boolean(
         string=u'parenthood',
