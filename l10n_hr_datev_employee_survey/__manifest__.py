@@ -47,6 +47,7 @@ l10n_hr_datev_personalfragebogen Module Project.
         'hr',
         'contact',
         'base_iban',
+        'partner_firstname',
         'hr_holidays',
         'hr_contract'
     ],

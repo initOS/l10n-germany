@@ -37,18 +37,49 @@ class HrDatevEmployeeSurvey(models.Model):
         related='employee_id.address_home_id.firstname',
         store=True,
     )
+    street = fields.Char(
+        string=u'street',
+        related='employee_id.address_home_id.street',
+        store=True,
+    )
+    street2 = fields.Char(
+        string=u'street2',
+        related='employee_id.address_home_id.street2',
+        store=True,
+    )
+    zip = fields.Char(
+        string=u'zip',
+        related='employee_id.address_home_id.zip',
+        store=True,
+    )
+    city = fields.Char(
+        string=u'city',
+        related='employee_id.address_home_id.city',
+        store=True,
+    )
+    birthday = fields.Date(
+        string=u'birthday',
+        related='employee_id.birthday',
+        store=True,
+    )
+    gender = fields.Selection(
+        string=u'gender',
+        related='employee_id.gender',
+        store=True,
+    )
+    insurance_number = fields.Char(
+        string=u'insurance_number',
+        related='employee_id.insurance_number',
+        store=True,
+    )
+    marital = fields.Selection(
+        string=u'marital',
+        related='employee_id.marital',
+        store=True,
+    )
     
 
     #name res.partner.name
-    #personal data
-    #Straße und Hausnummer   res.partner                          field: street
-    #inkl. Anschriftenzusatz res.partner                          field: street2
-    #PLZ                     res.partner                          field: zip
-    #Ort                     res.partner                          field: city
-    #Geburtsdatum            hr.employee                          field: birthday
-    #Geschlecht              hr.employee                          field: gender
-    #Versicherungsnummer     hr.employee new field                field: insurance_number
-    #Familienstand           hr.employee                          field: marital
 
     #nur bei fehlender Versicherungs-Nr.
     #Geburtsort              hr.employee                          field: place_of_birth
