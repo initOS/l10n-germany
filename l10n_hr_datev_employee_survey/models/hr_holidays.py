@@ -2,12 +2,12 @@
 # -*- coding: utf-8 -*-
 ###############################################################################
 #    License, author and contributors information in:                         #
-#    __manifest__.py file at the root folder of this module.                   #
+#    __manifest__.py file at the root folder of this module.                  #
 ###############################################################################
 
-from . import hr_employee
-from . import hr_contract
-from . import hr_job
-from . import hr_department
-from . import hr_holidays
-from . import hr_datev_employee_survey
+from odoo import models, fields, api, _
+from odoo.exceptions import UserError, ValidationError
+
+class Holidays(models.Model):
+
+    _inherit = 'hr.holidays'
