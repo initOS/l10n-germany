@@ -11,5 +11,16 @@ from odoo.exceptions import UserError, ValidationError
 class Job(models.Model):
 
     _inherit = 'hr.job'
-    functional_job_activity = fields.Char(string='Functional Job Activity')
+    #Ausgeübte Tätigkeit
+    
+    functional_job_activity = fields.Char(
+        string=u'functional_job_activity',
+    )
+    
+    
+    #Personengruppe
+    group_of_people = fields.Selection(
+        string=u'group_of_people',
+        selection=[('Auszubildende')]
+    )
     
