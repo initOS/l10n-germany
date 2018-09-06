@@ -48,15 +48,15 @@ class Employee(models.Model):
     # Höchster Schulabschluss
 
     highest_education = fields.Selection(
-        string=u'highest education',
-        selection=[('No Education', 'Lower Secondary Education', 'Secondary Education / Equally High Education', 'Highschool Education')]
+        string=u'highest_education',
+        selection=[('no_education', 'No Education'), ('lower_sec_education', 'Lower Secondary Education'), ('sec_education', 'Secondary Education / Equally High Education'), ('highschool_education', 'Highschool Education')]
     )
 
     # Höchste Berufsbildung
 
     highest_vet_experience = fields.Selection(
-        string=u'highest vet experience',
-        selection=[('No VET', 'Completed VET', '', 'Bachelor', 'Masters Degree', 'Promotion')]
+        string=u'highest_vet_experience',
+        selection=[('no_vet', 'No VET'), ('completed_vet','Completed VET'), ('placeholder', 'PH'), ('bachelor', 'Bachelor'), ('masters_degree', 'Masters Degree'), ('promotion','Promotion')]
     )
 
     # Finanzamtnummer
@@ -69,7 +69,7 @@ class Employee(models.Model):
 
     tax_class_id = fields.Selection(
         string=u'tax_class_id',
-        selection=[('I (1)', 'II (2)', 'III (3)', 'IV (4)', 'V (5)', 'VI (6)')]
+        selection=[('1', 'I (1)'), ('2', 'II (2)'), ('3', 'III (3)'), ('4', 'IV (4)'), ('5', 'V (5)'), ('6', 'VI (6)')]
     )
 
     # Konfession
