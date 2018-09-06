@@ -11,11 +11,11 @@ from odoo.exceptions import UserError, ValidationError
 class Job(models.Model):
 
     _inherit = 'hr.job'
-    job_activity_number = fields.Selection(
+    
+    job_activity_number = fields.Char(
         string=u'job activity number',
-        selection=[('valor1', 'valor1'), ('valor2', 'valor2')],
-        required=True
     )
+    
 
     # Ausgeübte Tätigkeit
 
