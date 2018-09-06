@@ -28,9 +28,6 @@
 
     'description': """
 l10n_hr_datev_personalfragebogen Module Project.
-==============================================
-
-
     """,
 
     'author': 'OCA',
@@ -52,7 +49,7 @@ l10n_hr_datev_personalfragebogen Module Project.
         'hr_contract'
     ],
     'data': [
-        'views/hr_employee.xml'
+        #'views/hr_employee.xml'
     ],
     'demo': [
     ],

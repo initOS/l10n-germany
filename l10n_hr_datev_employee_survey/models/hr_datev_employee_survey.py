@@ -12,9 +12,6 @@ class HrDatevEmployeeSurvey(models.Model):
     _name = 'hr.datev.employee.survey'
     _description = u'hr.datev.employee.survey'
 
-    _rec_name = 'name'
-    _order = 'name ASC'
-
     employee_id = fields.Many2one(
         string=u'Employee',
         comodel_name='hr.employee',
