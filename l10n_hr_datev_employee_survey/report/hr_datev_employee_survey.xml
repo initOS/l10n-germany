@@ -1,18 +1,31 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <template id="employee_survey_personal_information">
-            <t t-call="web.html_container">
-                <t t-foreach="docs" t-as="o">
-                    <t t-call="web.external_layout">
-                        <div class="page">
-                            <h2>Report title</h2>
-                            <p>This object's name is <span t-field="o.name"/></p>
-                        </div>
-                    </t>
-                </t>
-            </t>
-        </template>
+        <record model="ir.ui.view" id="hr_datev_employee_survey_tree_view">
+            <field name="name">Datev Survey View</field>
+            <field name="model">hr.datev.employee.survey</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_id"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="hr_datev_employee_survey_form_view">
+            <field name="name">Datev Survey Form View</field>
+            <field name="model">hr.datev.employee.survey</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="employee_id"/>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_window_hr_datev_employee_survey">
+            <field name="name">Datev Survey</field>
+            <field name="res_model">hr.datev.employee.survey</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem name="Datev Survey" id="menu_datev_survey" parent="hr.menu_hr_root"/>
+        <menuitem name="Datev Survey Field Overview" id="menu_datev_survey_overview" parent="menu_datev_survey"
+            action="action_window_hr_datev_employee_survey"/>
     </data>
 </odoo>
