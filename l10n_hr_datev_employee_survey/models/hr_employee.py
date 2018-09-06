@@ -9,7 +9,7 @@ from odoo.exceptions import UserError, ValidationError
 
 
 class Employee(models.Model):
-    _inherit = ['hr.employee']
+    _inherit = 'hr.employee'
 
     # Geburtsland
     country_of_birth = fields.Many2one(
@@ -58,13 +58,12 @@ class Employee(models.Model):
         selection=[
             ('no_vet', 'No VET'),
             ('completed_vet', 'Completed VET'),
-            ('placeholder', 'PH'), 
-            ('bachelor', 'Bachelor'), 
-            ('masters_degree', 'Masters Degree'), 
+            ('placeholder', 'PH'),
+            ('bachelor', 'Bachelor'),
+            ('masters_degree', 'Masters Degree'),
             ('promotion', 'Promotion')
         ]
     )
-
     # Finanzamtnummer
     tax_office_number = fields.Integer(
         string=u'tax_office_number',
@@ -82,7 +81,6 @@ class Employee(models.Model):
             ('6', 'VI (6)')
         ]
     )
-
     # Konfession
     confession = fields.Char(
         string=u'confession',

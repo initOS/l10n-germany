@@ -13,13 +13,13 @@ class HrDatevEmployeeSurvey(models.Model):
         comodel_name='hr.employee',
         ondelete='set null',
     )
-    
-    # personal data    
+
+    # personal data
     lastname = fields.Char(
         string=u'lastname',
         related='employee_id.address_home_id.lastname',
         store=True,
-    ) 
+    )
     birthname = fields.Char(
         string=u'birthname',
         related='employee_id.birthname',
@@ -151,17 +151,16 @@ class HrDatevEmployeeSurvey(models.Model):
         string=u'production site',
     )
     department_number = fields.Char(
-        string=u'department number',    
-        related='employee_id.department_id.department_number',   
+        string=u'department number',
+        related='employee_id.department_id.department_number',
     )
     job_activity_number = fields.Char(
         string=u'job activity number',
-        related='employee_id.job_id.job_activity_number', 
+        related='employee_id.job_id.job_activity_number',
     )
     leave_count = fields.Char(
         string=u'leave count',
     )
-    
     working_hour_type = fields.Selection(
         string=u'working_hour_type',
         related='employee_id.resource_calendar_id.working_hour_type',
@@ -171,29 +170,35 @@ class HrDatevEmployeeSurvey(models.Model):
     further_particulars = fields.Char(
         string=u'further particulars',
     )
-    # rel info
-    # Ggf.Verteilung d. wöchentl.  resource.calendar.attendance new field   field: dayofweek (computed, stored) rel: resource.calendar.attendance_ids
+    # Ggf.Verteilung d. wöchentl.  resource.calendar.attendance new field
+    # field: dayofweek (computed, stored) rel: resource.calendar.attendance_ids
 
     # limitation
-    # Das Arbeitsverhältnis ist befristet / zweckbefristet    hr.contract   computed date_start <=> date_end
-    # Befristung Arbeitsvertrag zum:                          hr.contract   if computed => date_end
-    # Schriftlicher Abschluss des befristeten Arbeits...      hr.contract   if computed => true
-    # Abschluss Arbeitsvertrag am:                            hr.contract   if computed => date_start
-    # befristete Beschäftigung ist ....                       hr.contract   field: limited_employment_with_designated_employment
-    
+    # Das Arbeitsverhältnis ist befristet / zweckbefristet
+    # hr.contract   computed date_start <=> date_end
+    # Befristung Arbeitsvertrag zum:
+    # hr.contract   if computed => date_end
+    # Schriftlicher Abschluss des befristeten Arbeits...
+    # hr.contract   if computed => true
+    # Abschluss Arbeitsvertrag am:
+    # hr.contract   if computed => date_start
+    # befristete Beschäftigung ist ....
+    # hr.contract   field: limited_employment_with_designated_employment
+
     # tax
     # Identifikationsnr              hr.employee    field:identification_id
     # Finanzamt-Nr.                  hr.employee new
-    # Steuerklasse/Faktor            hr.employee new 
+    # Steuerklasse/Faktor            hr.employee new
     # Kinderfreibeträge              hr.employee new
     # Konfession                     hr.employee new
 
     # social insurance
     # Gesetzl. Krankenkasse         hr.employee  new
-    # Elterneigenschaft             hr.employee  computed children count field: children
+
+    # Elterneigenschaft             hr.employee  computed children count
+    # field: children
     # KV                            l10n_de_payroll needed
     # RV                            l10n_de_payroll needed
     # AV                            l10n_de_payroll needed
     # PV                            l10n_de_payroll needed
     # UV - Gefahrtarif              l10n_de_payroll needed
-
