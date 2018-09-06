@@ -14,14 +14,14 @@ class Employee(models.Model):
 
     #Geburtsland
 
-    country_of_birth = fields.One2many(
+    country_of_birth = fields.Many2one(
         string=u'country_of_birth',
         comodel_name='res.country',
     )
     
     #Geburtsname
 
-    birth_name = fields.Char(
+    birthname = fields.Char(
         string=u'birth_name',
     )
     
