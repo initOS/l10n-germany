@@ -1,8 +1,4 @@
 # -*- coding: utf-8 -*-
-###############################################################################
-#    License, author and contributors information in:                         #
-#    __manifest__.py file at the root folder of this module.                  #
-###############################################################################
 
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError, ValidationError
@@ -11,9 +7,6 @@ from odoo.exceptions import UserError, ValidationError
 class HrDatevEmployeeSurvey(models.Model):
     _name = 'hr.datev.employee.survey'
     _description = u'hr.datev.employee.survey'
-
-    _rec_name = 'name'
-    _order = 'name ASC'
 
     employee_id = fields.Many2one(
         string=u'Employee',
@@ -77,19 +70,33 @@ class HrDatevEmployeeSurvey(models.Model):
         related='employee_id.marital',
         store=True,
     )
-    
-
-    #name res.partner.name
-
-    #nur bei fehlender Versicherungs-Nr.
-    #Geburtsort              hr.employee                          field: place_of_birth
-    # -land                  hr.employee new field                field: country_of_birth
-    #Schwerbehindert         hr.employee new field                field: handicapped
-    #Staatsangehörigkeit     hr.employee                          field: country_id               
-    #Arbeitnehmernummer      ???
-    #Kontonummer             res.partner.bank
-    #(IBAN)                  res.partner.bank                     field: acc_number
-    #Bankleitzahl/Bankb      res.bank                             field: bic          rel:res.partner.bank.bank_id of acc_number
+    place_of_birth = fields.Char(
+        string=u'place of birth',
+        related='employee_id.place_of_birth',
+        store=True,
+    )
+    country_of_birth = fields.Many2one(
+        string=u'country of birth',
+        related='employee_id.country_of_birth',
+        store=True,
+    )
+    handicapped = fields.Boolean(
+        string=u'handicapped',
+        related='employee_id.handicapped',
+        store=True,
+    )
+    country_id = fields.Many2one(
+        string=u'country',
+        related='employee_id.country_id',
+        store=True,
+    ) 
+    construction_employee_id = fields.Char(
+        string=u'construction employee id',
+    )
+    bank_id = fields.One2many(
+        string=u'bank',
+        related='employee_id.address_home_id.bank_ids'
+    )
 
     #employment
     #rel info

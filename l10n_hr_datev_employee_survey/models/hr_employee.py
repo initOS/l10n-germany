@@ -18,6 +18,14 @@ class Employee(models.Model):
         string=u'country_of_birth',
         comodel_name='res.country',
     )
+
+    address_home_id = fields.Many2one(
+        'res.partner', 
+        'Private Address', 
+        help='Enter here the private address of the employee, not the one linked to your company.',
+        groups="hr.group_hr_user", 
+        required=True,
+    )
     
     #Geburtsname
 
