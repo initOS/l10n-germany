@@ -45,7 +45,7 @@ l10n_hr_datev_personalfragebogen Module Project.
     'depends': [
         'base',
         'hr',
-        'contact',
+        'contacts',
         'base_iban',
         'hr_holidays',
         'hr_contract'
