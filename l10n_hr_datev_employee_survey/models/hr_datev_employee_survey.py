@@ -93,9 +93,9 @@ class HrDatevEmployeeSurvey(models.Model):
     construction_employee_id = fields.Char(
         string=u'construction employee id',
     )
-    bank_id = fields.One2many(
+    bank_id = fields.Many2one(
         string=u'bank',
-        related='employee_id.address_home_id.bank_ids'
+        related="employee_id.bank_account_id"
     )
 
     # employment
