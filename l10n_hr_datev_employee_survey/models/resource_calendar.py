@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 ###############################################################################
 #    License, author and contributors information in:                         #
@@ -7,13 +8,13 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError, ValidationError
 
-class Department(models.Model):
 
-    _inherit = 'hr.department'
+class ResourceCalendar(models.Model):
 
-    #Abt- Nummer
+    _inherit = 'resource.calendar'
     
-    department_number = fields.Char(
-        string=u'department_number',
+    working_hour_type = fields.Selection(
+        string=u'working hour type',
+        selection=[('ft', 'Full Time'), ('pt', 'Part Time')]
     )
-    
+     

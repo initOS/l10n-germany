@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 ###############################################################################
 #    License, author and contributors information in:                         #
@@ -17,17 +16,15 @@ class Job(models.Model):
         selection=[('valor1', 'valor1'), ('valor2', 'valor2')],
         required=True
     )
-    
-    #Ausgeübte Tätigkeit
-    
+
+    # Ausgeübte Tätigkeit
+
     functional_job_activity = fields.Char(
         string=u'functional_job_activity',
     )
-    
-    
-    #Personengruppe
+
+    # Personengruppe
     group_of_people = fields.Selection(
         string=u'group_of_people',
         selection=[('Auszubildende')]
     )
-    

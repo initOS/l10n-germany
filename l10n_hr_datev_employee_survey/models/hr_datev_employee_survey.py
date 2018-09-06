@@ -89,7 +89,7 @@ class HrDatevEmployeeSurvey(models.Model):
         string=u'country',
         related='employee_id.country_id',
         store=True,
-    ) 
+    )
     construction_employee_id = fields.Char(
         string=u'construction employee id',
     )
@@ -99,29 +99,81 @@ class HrDatevEmployeeSurvey(models.Model):
     )
 
     # employment
+    entry_date = fields.Date(
+        string=u'entry date',
+        default=fields.Date.context_today,
+    )
+    first_entry_date = fields.Date(
+        string=u'first entry date',
+        related="employee_id.contract_id.date_start"
+    )
+    job_title = fields.Char(
+        string=u'job title',
+        related='employee_id.job_id.name',
+        store=True,
+    )
+    job_activity = fields.Char(
+        string=u'job activity',
+        related='employee_id.job_id.functional_job_activity',
+    )
+    
+    employment = fields.Selection(
+        string=u'employment',
+        related='employee_id.contract_id.employment',
+    )
+    additional_employment = fields.Boolean(
+        string=u'additional employment',
+        related='employee_id.contract_id.additional_employment',
+    )
+    highest_education = fields.Selection(
+        string=u'highest education',
+        related='employee_id.highest_education',
+    )
+    highest_vet_experience = fields.Selection(
+        string=u'highest vet experience',
+        related='employee_id.highest_vet_experience',
+    )
+    date_start_trainnee = fields.Date(
+        string=u'date start trainnee',
+        default=fields.Date.context_today,
+    )
+    date_end_trainnee = fields.Date(
+        string=u'date end trainnee',
+        default=fields.Date.context_today,
+    )
+    contruction_business_since = fields.Date(
+        string=u'contruction business since',
+        default=fields.Date.context_today,
+    )
+    cost_centre = fields.Char(
+        string=u'cost_centre',
+    )
+    production_site = fields.Char(
+        string=u'production site',
+    )
+    department_number = fields.Char(
+        string=u'department number',    
+        related='employee_id.department_id.department_number',   
+    )
+    job_activity_number = fields.Char(
+        string=u'job activity number',
+        related='employee_id.job_id.job_activity_number', 
+    )
+    leave_count = fields.Char(
+        string=u'leave count',
+    )
+    
+    working_hour_type = fields.Selection(
+        string=u'working_hour_type',
+        related='employee_id.resourde_calendar_id.working_hour_type',
+    )
+
+    # further_particulars
+    further_particulars = fields.Char(
+        string=u'further particulars',
+    )
     # rel info
-    #    contract_id	Current Contract
-    #    contract_ids   all contracts
-    # Eintrittsdatum Ersteintrittsdatum       hr.contract                   field: date_start   rel: oldest contract or current?!?
-    # Betriebsstätte                          ???
-    # Berufsbezeichnung                       hr.job                        field: name
-    # Ausgeübte Tätigkeit                     hr.job new field              field: functional_job_activity
-    # Hauptbeschäftigung Nebenbeschäftigung   hr.contract new field         field: employment
-    # Üben Sie weitere Beschäftigungen...     hr.contract new field         field: additional_employment
-    # Höchster Schulabschluss                 hr.employee new field         field: 
-    # Höchste Berufsausbildung                hr.employee new field         field:
-              
-    # Beginn der Ausbildung:                  hr.contract                   field: date_start             rel: hr.contract.type_id of "trainee"
-    # Voraussichtliches Ende der Ausbildung:  hr.contract                   field: date_end               rel: hr.contract.type_id of "trainee"
-    # Im Baugewerbe beschäftigt seit          hr.contract new field         field: contruction_business_since  rel: current contract
-
-    # Wöchentliche Arbeitszeit:    resource.calendar.attendance new field   field: working_hours (computed, stored) rel: resource.calendar.attendance_ids
     # Ggf.Verteilung d. wöchentl.  resource.calendar.attendance new field   field: dayofweek (computed, stored) rel: resource.calendar.attendance_ids
-
-    # Urlaubsanspruch(Kalenderjahr)          hr.employee                    field: leave_count
-    # Kostenstelle                           ???
-    # Abt.-Nummer                            hr.department new field        field: department_number
-    # Personengruppe                         hr.job  new field              field: job_activity_number
 
     # limitation
     # Das Arbeitsverhältnis ist befristet / zweckbefristet    hr.contract   computed date_start <=> date_end
@@ -129,11 +181,6 @@ class HrDatevEmployeeSurvey(models.Model):
     # Schriftlicher Abschluss des befristeten Arbeits...      hr.contract   if computed => true
     # Abschluss Arbeitsvertrag am:                            hr.contract   if computed => date_start
     # befristete Beschäftigung ist ....                       hr.contract   field: limited_employment_with_designated_employment
-
-    # further_particulars
-    further_particulars = fields.Char(
-        string=u'further particulars',
-    )
     
     # tax
     # Identifikationsnr              hr.employee    field:identification_id
