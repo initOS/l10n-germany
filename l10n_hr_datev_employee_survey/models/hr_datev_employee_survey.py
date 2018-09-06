@@ -164,7 +164,7 @@ class HrDatevEmployeeSurvey(models.Model):
     
     working_hour_type = fields.Selection(
         string=u'working_hour_type',
-        related='employee_id.resourde_calendar_id.working_hour_type',
+        related='employee_id.resource_calendar_id.working_hour_type',
     )
 
     # further_particulars
