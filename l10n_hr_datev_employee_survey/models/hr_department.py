@@ -7,6 +7,7 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError, ValidationError
 
+
 class Department(models.Model):
 
     _inherit = 'hr.department'

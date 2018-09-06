@@ -116,7 +116,6 @@ class HrDatevEmployeeSurvey(models.Model):
         string=u'job activity',
         related='employee_id.job_id.functional_job_activity',
     )
-    
     employment = fields.Selection(
         string=u'employment',
         related='employee_id.contract_id.employment',

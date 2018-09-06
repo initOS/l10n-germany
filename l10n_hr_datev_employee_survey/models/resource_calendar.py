@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 ###############################################################################
 #    License, author and contributors information in:                         #
