@@ -7,6 +7,6 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError, ValidationError
 
-class Holidays(models.Model):
 
+class Holidays(models.Model):
     _inherit = 'hr.holidays'

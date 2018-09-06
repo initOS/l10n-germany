@@ -14,7 +14,6 @@ class Job(models.Model):
         string=u'job activity number',
         required=True
     )
-    
 
     # Ausgeübte Tätigkeit
     functional_job_activity = fields.Char(

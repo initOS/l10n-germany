@@ -12,9 +12,7 @@ class Department(models.Model):
 
     _inherit = 'hr.department'
 
-    #Abt- Nummer
-    
+    # Abt- Nummer
     department_number = fields.Char(
         string=u'department_number',
     )
-    

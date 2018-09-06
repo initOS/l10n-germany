@@ -9,11 +9,9 @@ from odoo.exceptions import UserError, ValidationError
 
 
 class ResourceCalendar(models.Model):
-
     _inherit = 'resource.calendar'
-    
+
     working_hour_type = fields.Selection(
         string=u'working hour type',
         selection=[('ft', 'Full Time'), ('pt', 'Part Time')]
     )
-     
