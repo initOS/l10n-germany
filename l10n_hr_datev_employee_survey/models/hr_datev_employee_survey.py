@@ -133,7 +133,7 @@ class HrDatevEmployeeSurvey(models.Model):
         related='employee_id.highest_vet_experience',
     )
     date_start_trainee = fields.Date(
-        string=u'date start trainnee',
+        string=u'date start trainee',
         default=fields.Date.context_today,
     )
     date_end_trainee = fields.Date(

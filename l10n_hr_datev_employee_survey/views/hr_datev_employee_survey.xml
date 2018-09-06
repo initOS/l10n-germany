@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="hr_datev_employee_survey_tree_view">
+            <field name="name">Datev Survey View</field>
+            <field name="model">hr.datev.employee.survey</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_id"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="hr_datev_employee_survey_form_view">
+            <field name="name">Datev Survey Form View</field>
+            <field name="model">hr.datev.employee.survey</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="employee_id"/>
+                        </group>
+                        <!--Personal Information-->
+                        <notebook>
+                            <page string="Personal Data">
+                                <group>
+                                    <group>
+                                        <field name="lastname"/>
+                                        <field name="birthname"/>
+                                        <field name="street"/>
+                                        <field name="street2"/>
+                                        <field name="birthday"/>
+                                        <field name="insurance_number"/>
+                                        <field name="place_of_birth"/>
+                                        <field name="country_of_birth"/>
+                                        <field name="country_id"/>
+                                        <field name="bank_id"/>
+                                    </group>
+                                    <group>
+                                        <field name="firstname"/>
+                                        <field name="zip"/>
+                                        <field name="city"/>
+                                        <field name="gender"/>
+                                        <field name="marital"/>
+                                        <field name="handicapped"/>
+                                        <field name="construction_employee_id"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Employment">
+                                <group>
+                                    <field name="entry_date"/>
+                                    <field name="first_entry_date"/>
+                                    <field name="job_title"/>
+                                    <field name="job_activity"/>
+                                    <field name="employment"/>
+                                    <field name="additional_employment"/>
+                                    <field name="highest_education"/>
+                                    <field name="highest_vet_experience"/>
+                                    <field name="date_start_trainee"/>
+                                    <field name="date_end_trainee"/>
+                                    <field name="construction_business_since"/>
+                                    <field name="cost_centre"/>
+                                    <field name="production_site"/>
+                                    <field name="department_number"/>
+                                    <field name="job_activity_number"/>
+                                    <field name="leave_count"/>
+                                    <field name="working_hour_type"/>
+                                </group>
+                            </page>
+                            <page string="Expiration">
+                            </page>
+                            <page string="Further Particulars">
+                                <field name="further_particulars"/>
+                            </page>
+                            <page string="Tax">
+                            </page>
+                            <page string="Insurance">
+                            </page>
+                            <page string="Wage">
+                            </page>
+                            <page string="Capital Accumulation Benefits">
+                            </page>
+                            <page string="Document Specifications">
+                            </page>
+                            <page string="Specifications Of Taxable Employments In The Current Year" >
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_window_hr_datev_employee_survey">
+            <field name="name">Datev Survey</field>
+            <field name="res_model">hr.datev.employee.survey</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem name="Datev Survey" id="menu_datev_survey" parent="hr.menu_hr_root"/>
+        <menuitem name="Datev Survey Field Overview" id="menu_datev_survey_overview" parent="menu_datev_survey" action="action_window_hr_datev_employee_survey"/>
+    </data>
+</odoo>
