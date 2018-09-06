@@ -95,7 +95,7 @@ class HrDatevEmployeeSurvey(models.Model):
     )
     bank_id = fields.Many2one(
         string=u'bank',
-        related="employee_id.bank_account_id"
+        model="res.partner.bank"
     )
 
     # employment
