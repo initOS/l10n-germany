@@ -186,19 +186,47 @@ class HrDatevEmployeeSurvey(models.Model):
     # hr.contract   field: limited_employment_with_designated_employment
 
     # tax
-    # Identifikationsnr              hr.employee    field:identification_id
-    # Finanzamt-Nr.                  hr.employee new
-    # Steuerklasse/Faktor            hr.employee new
-    # Kinderfreibeträge              hr.employee new
-    # Konfession                     hr.employee new
+    identification_id = fields.Char(
+        string=u'identification id',
+        related='employee_id.identification_id',
+    )
+    revenue_office_id = fields.Char(
+        string=u'revenue office id',
+    )
+    tax_class_id = fields.Selection(
+        string=u'tax class id',
+        related='employee_id.tax_class_id',
+    )
+    child_allowance = fields.Float(
+        string=u'child allowance',
+        related='employee_id.child_allowance',
+    )
+    confession = fields.Char(
+        string=u'confession',
+        related='employee_id.confession',
+    )
 
     # social insurance
-    # Gesetzl. Krankenkasse         hr.employee  new
-
-    # Elterneigenschaft             hr.employee  computed children count
-    # field: children
-    # KV                            l10n_de_payroll needed
-    # RV                            l10n_de_payroll needed
-    # AV                            l10n_de_payroll needed
-    # PV                            l10n_de_payroll needed
-    # UV - Gefahrtarif              l10n_de_payroll needed
+    health_ensurance = fields.Char(
+        string=u'health ensurance',
+        related='employee_id.health_ensurance',
+    )
+    parenthood = fields.Boolean(
+        string=u'parenthood',
+        related='employee_id.parenthood',
+    )
+    tax_kv = fields.Float(
+        string=u'tax_kv',
+    )
+    tax_rv = fields.Float(
+        string=u'tax_rv',
+    )
+    tax_av = fields.Float(
+        string=u'tax_av',
+    )
+    tax_pv = fields.Float(
+        string=u'tax_pv',
+    )
+    tax_uv = fields.Float(
+        string=u'tax_uv',
+    )

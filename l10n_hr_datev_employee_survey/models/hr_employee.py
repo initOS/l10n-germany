@@ -64,10 +64,6 @@ class Employee(models.Model):
             ('promotion', 'Promotion')
         ]
     )
-    # Finanzamtnummer
-    tax_office_number = fields.Integer(
-        string=u'tax_office_number',
-    )
 
     # Steuerklasse
     tax_class_id = fields.Selection(
@@ -81,6 +77,11 @@ class Employee(models.Model):
             ('6', 'VI (6)')
         ]
     )
+    # Kinderfreibeträge
+    child_allowance = fields.Float(
+        string=u'child allowance',
+    )
+
     # Konfession
     confession = fields.Char(
         string=u'confession',

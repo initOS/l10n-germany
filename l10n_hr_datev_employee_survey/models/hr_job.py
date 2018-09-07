@@ -21,7 +21,6 @@ class Job(models.Model):
     )
 
     # Personengruppe
-    group_of_people = fields.Selection(
+    group_of_people = fields.Char(
         string=u'group_of_people',
-        selection=[('Auszubildende')]
     )
