@@ -14,27 +14,27 @@ class ResourceCalendar(models.Model):
         selection=[('ft', 'Full Time'), ('pt', 'Part Time')]
     )
     monday_working_hours = fields.Float(
-        string=u'monday_working_hours',
+        string='monday_working_hours',
         compute='_compute_working_hours_monday',
     )
     tuesday_working_hours = fields.Float(
-        string=u'tuesday_working_hours',
+        string='tuesday_working_hours',
         compute='_compute_working_hours_tuesday',
     )
     wednesday_working_hours = fields.Float(
-        string=u'wednesday_working_hours',
+        string='wednesday_working_hours',
         compute='_compute_working_hours_wednesday',
     )
     thursday_working_hours = fields.Float(
-        string=u'thursday_working_hours',
+        string='thursday_working_hours',
         compute='_compute_working_hours_thursday',
     )
     friday_working_hours = fields.Float(
-        string=u'friday_working_hours',
+        string='friday_working_hours',
         compute='_compute_working_hours_friday',
     )
     saturday_working_hours = fields.Float(
-        string=u'saturday_working_hours',
+        string='saturday_working_hours',
         compute='_compute_working_hours_saturday',
     )
 

@@ -164,34 +164,28 @@ class HrDatevEmployeeSurvey(models.Model):
         related='employee_id.resource_calendar_id.working_hour_type',
     )
     monday_working_hours = fields.Float(
-        string=u'monday_working_hours',
-        related='employee_id.resource_calendar_id.monday_working_hours'
-        #compute='_compute_working_hours_monday',
+        string='monday_working_hours',
+        related='employee_id.resource_calendar_id.monday_working_hours',
     )
     tuesday_working_hours = fields.Float(
-        string=u'tuesday_working_hours',
-        related='employee_id.resource_calendar_id.tuesday_working_hours'
-        #compute='_compute_working_hours_tuesday',
+        string='tuesday_working_hours',
+        related='employee_id.resource_calendar_id.tuesday_working_hours',
     )
     wednesday_working_hours = fields.Float(
-        string=u'wednesday_working_hours',
-        related='employee_id.resource_calendar_id.wednesday_working_hours'
-        #compute='_compute_working_hours_wednesday',
+        string='wednesday_working_hours',
+        related='employee_id.resource_calendar_id.wednesday_working_hours',
     )
     thursday_working_hours = fields.Float(
-        string=u'thursday_working_hours',
-        related='employee_id.resource_calendar_id.thursday_working_hours'
-        #compute='_compute_working_hours_thursday',
+        string='thursday_working_hours',
+        related='employee_id.resource_calendar_id.thursday_working_hours',
     )
     friday_working_hours = fields.Float(
-        string=u'friday_working_hours',
-        related='employee_id.resource_calendar_id.friday_working_hours'
-        #compute='_compute_working_hours_friday',
+        string='friday_working_hours',
+        related='employee_id.resource_calendar_id.friday_working_hours',
     )
     saturday_working_hours = fields.Float(
-        string=u'saturday_working_hours',
-        related='employee_id.resource_calendar_id.saturday_working_hours'
-        #compute='_compute_working_hours_saturday',
+        string='saturday_working_hours',
+        related='employee_id.resource_calendar_id.saturday_working_hours',
     )
     # further_particulars tab
     further_particulars = fields.Char(
