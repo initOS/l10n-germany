@@ -4,7 +4,9 @@ from odoo import models, fields, api
 class HrDatevEmployeeSurvey(models.Model):
     _name = 'hr.datev.employee.survey'
     _description = u'hr.datev.employee.survey'
-
+    
+    _inherit = ['resource.calendar']
+    
     employee_id = fields.Many2one(
         string='Employee',
         comodel_name='hr.employee',
