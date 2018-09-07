@@ -197,15 +197,24 @@ class HrDatevEmployeeSurvey(models.Model):
     # limitation
     # Das Arbeitsverhältnis ist befristet / zweckbefristet
     # hr.contract   computed date_start <=> date_end
+    limited_employment = fields.Boolean(string='The employment is limited')
+    
     # Befristung Arbeitsvertrag zum:
     # hr.contract   if computed => date_end
+    limited_employment_date = fields.Boolean(string='Limited to')
+
     # Schriftlicher Abschluss des befristeten Arbeits...
     # hr.contract   if computed => true
+    contract_signed = fields.Boolean(string='The contract was signed')
+    
     # Abschluss Arbeitsvertrag am:
     # hr.contract   if computed => date_start
+    contract_signed_date = fields.Boolean(string='Signed on')
+    
     # befristete Beschäftigung ist ....
     # hr.contract   field: limited_employment_with_designated_employment
-
+    chance_of_continued_employment = fields.Boolean(string='Employment limited to 2 months with a chance of continued employment')
+    
     # tax tab
     identification_id = fields.Char(
         string='identification id',
