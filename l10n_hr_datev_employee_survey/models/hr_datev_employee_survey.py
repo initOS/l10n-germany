@@ -224,10 +224,10 @@ class HrDatevEmployeeSurvey(models.Model):
         string='tax class id',
         related='employee_id.tax_class_id',
     )
-    # child_allowance = fields.Float(
-    #     string='child allowance',
-    #     related='employee_id.child_allowance',
-    # )
+    child_allowance = fields.Float(
+        string='child allowance',
+        related='employee_id.child_allowance',
+    )
     confession = fields.Char(
         string='confession',
         related='employee_id.confession',

@@ -44,7 +44,7 @@ class ResourceCalendar(models.Model):
             for attendance in attendance_records.attendance_ids:
                 if attendance.dayofweek == '0':
                     if attendance.hour_to < attendance.hour_from:
-                        continue
+                        monday_hours += ((attendance.hour_to + 24) - attendance.hour_from)
                     elif attendance.hour_from > 24 or attendance.hour_to > 24:
                         continue
                     else:
@@ -57,7 +57,7 @@ class ResourceCalendar(models.Model):
             for attendance in attendance_records.attendance_ids:
                 if attendance.dayofweek == '1':
                     if attendance.hour_to < attendance.hour_from:
-                        continue
+                        tuesday_hours += ((attendance.hour_to + 24) - attendance.hour_from)
                     elif attendance.hour_from > 24 or attendance.hour_to > 24:
                         continue
                     else:
@@ -70,7 +70,7 @@ class ResourceCalendar(models.Model):
             for attendance in attendance_records.attendance_ids:
                 if attendance.dayofweek == '2':
                     if attendance.hour_to < attendance.hour_from:
-                        continue
+                        wednesday_hours += ((attendance.hour_to + 24) - attendance.hour_from)
                     elif attendance.hour_from > 24 or attendance.hour_to > 24:
                         continue
                     else:
@@ -83,7 +83,7 @@ class ResourceCalendar(models.Model):
             for attendance in attendance_records.attendance_ids:
                 if attendance.dayofweek == '3':
                     if attendance.hour_to < attendance.hour_from:
-                        continue
+                        thursday_hours += ((attendance.hour_to + 24) - attendance.hour_from)
                     elif attendance.hour_from > 24 or attendance.hour_to > 24:
                         continue
                     else:
@@ -96,7 +96,7 @@ class ResourceCalendar(models.Model):
             for attendance in attendance_records.attendance_ids:
                 if attendance.dayofweek == '4':
                     if attendance.hour_to < attendance.hour_from:
-                        continue
+                        friday_hours += ((attendance.hour_to + 24) - attendance.hour_from)
                     elif attendance.hour_from > 24 or attendance.hour_to > 24:
                         continue
                     else:
@@ -109,7 +109,7 @@ class ResourceCalendar(models.Model):
             for attendance in attendance_records.attendance_ids:
                 if attendance.dayofweek == '5':
                     if attendance.hour_to < attendance.hour_from:
-                        continue
+                        saturday_hours += ((attendance.hour_to + 24) - attendance.hour_from)
                     elif attendance.hour_from > 24 or attendance.hour_to > 24:
                         continue
                     else:
