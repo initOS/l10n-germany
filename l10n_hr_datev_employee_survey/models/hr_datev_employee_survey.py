@@ -278,3 +278,7 @@ class HrDatevEmployeeSurvey(models.Model):
     )
 
     # vwl tab
+    vwl_recipient = fields.Char(
+        string=u'vwl_recipient',
+        related='employee_id.address_home_id.name',
+    )

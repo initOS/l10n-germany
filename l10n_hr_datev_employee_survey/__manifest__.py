@@ -30,7 +30,7 @@
 l10n_hr_datev_personalfragebogen Module Project.
     """,
 
-    'author': 'Alexander Schubert, Thore Baden',
+    'author': 'Alexander Schubert, Thore Baden, Odoo Community Association',
     'maintainer': 'OCA',
     'contributors': [''],
 
