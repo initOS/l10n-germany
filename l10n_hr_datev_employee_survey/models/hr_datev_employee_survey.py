@@ -14,7 +14,7 @@ class HrDatevEmployeeSurvey(models.Model):
         ondelete='set null',
     )
 
-    # personal data
+    # personal data tab
     lastname = fields.Char(
         string=u'lastname',
         related='employee_id.address_home_id.lastname',
@@ -98,7 +98,7 @@ class HrDatevEmployeeSurvey(models.Model):
         model="res.partner.bank"
     )
 
-    # employment
+    # employment tab
     entry_date = fields.Date(
         string=u'entry date',
         default=fields.Date.context_today,
@@ -166,7 +166,7 @@ class HrDatevEmployeeSurvey(models.Model):
         related='employee_id.resource_calendar_id.working_hour_type',
     )
 
-    # further_particulars
+    # further_particulars tab
     further_particulars = fields.Char(
         string=u'further particulars',
     )
@@ -185,7 +185,7 @@ class HrDatevEmployeeSurvey(models.Model):
     # befristete Beschäftigung ist ....
     # hr.contract   field: limited_employment_with_designated_employment
 
-    # tax
+    # tax tab
     identification_id = fields.Char(
         string=u'identification id',
         related='employee_id.identification_id',
@@ -206,7 +206,7 @@ class HrDatevEmployeeSurvey(models.Model):
         related='employee_id.confession',
     )
 
-    # social insurance
+    # social insurance tab
     health_ensurance = fields.Char(
         string=u'health ensurance',
         related='employee_id.health_ensurance',
@@ -230,3 +230,54 @@ class HrDatevEmployeeSurvey(models.Model):
     tax_uv = fields.Float(
         string=u'tax_uv',
     )
+
+    # wage tab
+    wage_description_1 = fields.Char(
+        string=u'wage_description_1',
+    )
+    wage_description_2 = fields.Char(
+        string=u'wage_description_2',
+    )
+    wage_description_3 = fields.Char(
+        string=u'wage_description_3',
+    )
+    wage_amount1 = fields.Float(
+        string=u'wage_amount1',
+    )
+    wage_amount2 = fields.Float(
+        string=u'wage_amount1',
+    )
+    wage_amount3 = fields.Float(
+        string=u'wage_amount1',
+    )
+    wage_amount_start_date1 = fields.Date(
+        string=u'wage_start_date1',
+        default=fields.Date.context_today,
+    )
+    wage_amount_start_date2 = fields.Date(
+        string=u'wage_start_date1',
+    )
+    wage_amount_start_date3 = fields.Date(
+        string=u'wage_start_date1',
+    )
+    wages_per_hour1 = fields.Float(
+        string=u'wages_per_hour1',
+    )
+    wages_per_hour2 = fields.Float(
+        string=u'wages_per_hour2',
+    )
+    wages_per_hour3 = fields.Float(
+        string=u'wages_per_hour3',
+    )
+    wage_hourly_start_date1 = fields.Date(
+        string=u'wage_start_date1',
+        default=fields.Date.context_today,
+    )
+    wage_hourly_start_date2 = fields.Date(
+        string=u'wage_start_date1',
+    )
+    wage_hourly_start_date3 = fields.Date(
+        string=u'wage_start_date1',
+    )
+
+    # vwl tab
