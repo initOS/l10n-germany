@@ -80,7 +80,9 @@
                             <page string="Expiration">
                             </page>
                             <page string="Further Particulars">
-                                <field name="further_particulars"/>
+                                <group>
+                                    <field name="further_particulars"/>
+                                </group>
                             </page>
                             <page string="Tax">
                             </page>
