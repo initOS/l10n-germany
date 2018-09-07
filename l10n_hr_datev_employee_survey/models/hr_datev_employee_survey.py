@@ -4,12 +4,11 @@ from odoo import models, fields, api
 class HrDatevEmployeeSurvey(models.Model):
     _name = 'hr.datev.employee.survey'
     _description = u'hr.datev.employee.survey'
-    
-    _inherit = ['resource.calendar']
-    
+    _rec_name = 'employee_id'
     employee_id = fields.Many2one(
         string='Employee',
         comodel_name='hr.employee',
+        required=True,
         ondelete='set null',
     )
 
@@ -164,7 +163,36 @@ class HrDatevEmployeeSurvey(models.Model):
         string='working_hour_type',
         related='employee_id.resource_calendar_id.working_hour_type',
     )
-
+    monday_working_hours = fields.Float(
+        string=u'monday_working_hours',
+        related='employee_id.resource_calendar_id.monday_working_hours'
+        #compute='_compute_working_hours_monday',
+    )
+    tuesday_working_hours = fields.Float(
+        string=u'tuesday_working_hours',
+        related='employee_id.resource_calendar_id.tuesday_working_hours'
+        #compute='_compute_working_hours_tuesday',
+    )
+    wednesday_working_hours = fields.Float(
+        string=u'wednesday_working_hours',
+        related='employee_id.resource_calendar_id.wednesday_working_hours'
+        #compute='_compute_working_hours_wednesday',
+    )
+    thursday_working_hours = fields.Float(
+        string=u'thursday_working_hours',
+        related='employee_id.resource_calendar_id.thursday_working_hours'
+        #compute='_compute_working_hours_thursday',
+    )
+    friday_working_hours = fields.Float(
+        string=u'friday_working_hours',
+        related='employee_id.resource_calendar_id.friday_working_hours'
+        #compute='_compute_working_hours_friday',
+    )
+    saturday_working_hours = fields.Float(
+        string=u'saturday_working_hours',
+        related='employee_id.resource_calendar_id.saturday_working_hours'
+        #compute='_compute_working_hours_saturday',
+    )
     # further_particulars tab
     further_particulars = fields.Char(
         string='further particulars',
