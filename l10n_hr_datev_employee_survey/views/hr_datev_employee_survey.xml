@@ -48,23 +48,33 @@
                             </page>
                             <page string="Employment">
                                 <group>
-                                    <field name="entry_date"/>
-                                    <field name="first_entry_date"/>
-                                    <field name="job_title"/>
-                                    <field name="job_activity"/>
-                                    <field name="employment"/>
-                                    <field name="additional_employment"/>
-                                    <field name="highest_education"/>
-                                    <field name="highest_vet_experience"/>
-                                    <field name="date_start_trainee"/>
-                                    <field name="date_end_trainee"/>
-                                    <field name="construction_business_since"/>
-                                    <field name="cost_centre"/>
-                                    <field name="production_site"/>
-                                    <field name="department_number"/>
-                                    <field name="job_activity_number"/>
-                                    <field name="leave_count"/>
-                                    <field name="working_hour_type"/>
+                                    <group>
+                                        <field name="entry_date"/>
+                                        <field name="first_entry_date"/>
+                                        <field name="job_title"/>
+                                        <field name="employment"/>
+                                        <field name="additional_employment"/>
+                                        <field name="highest_education"/>
+                                        <field name="date_start_trainee"/>
+                                        <field name="job_activity_number"/>
+                                        <field name="working_hour_type"/>
+                                        <field name="cost_centre"/>
+                                    </group>
+                                    <group>
+                                        <field name="production_site"/>
+                                        <field name="job_activity"/>
+                                        <field name="highest_vet_experience"/>
+                                        <field name="date_end_trainee"/>
+                                        <field name="construction_business_since"/>
+                                        <field name="monday_working_hours"/>
+                                        <field name="tuesday_working_hours"/>
+                                        <field name="wednesday_working_hours"/>
+                                        <field name="thursday_working_hours"/>
+                                        <field name="friday_working_hours"/>
+                                        <field name="saturday_working_hours"/>
+                                        <field name="department_number"/>
+                                        <field name="leave_count"/>
+                                    </group>
                                 </group>
                             </page>
                             <page string="Expiration">
@@ -82,7 +92,7 @@
                             </page>
                             <page string="Document Specifications">
                             </page>
-                            <page string="Specifications Of Taxable Employments In The Current Year" >
+                            <page string="Specifications Of Taxable Employments In The Current Year">
                             </page>
                         </notebook>
                     </sheet>
