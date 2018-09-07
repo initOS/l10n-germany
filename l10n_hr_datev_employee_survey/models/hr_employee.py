@@ -76,9 +76,9 @@ class Employee(models.Model):
         ]
     )
     # Kinderfreibeträge
-    child_allowance = fields.Float(
-        string='child allowance',
-    )
+    # child_allowance = fields.Float(
+    #     string='child allowance',
+    # )
 
     # Konfession
     confession = fields.Char(
