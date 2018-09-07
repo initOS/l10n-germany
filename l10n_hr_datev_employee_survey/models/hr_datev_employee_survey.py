@@ -224,10 +224,10 @@ class HrDatevEmployeeSurvey(models.Model):
         string='tax class id',
         related='employee_id.tax_class_id',
     )
-    child_allowance = fields.Float(
-        string='child allowance',
-        related='employee_id.child_allowance',
-    )
+    # child_allowance = fields.Float(
+    #     string='child allowance',
+    #     related='employee_id.child_allowance',
+    # )
     confession = fields.Char(
         string='confession',
         related='employee_id.confession',
@@ -309,6 +309,6 @@ class HrDatevEmployeeSurvey(models.Model):
 
     # vwl tab
     vwl_recipient = fields.Char(
-        string=u'vwl_recipient',
+        string='vwl_recipient',
         related='employee_id.address_home_id.name',
     )

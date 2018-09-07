@@ -50,6 +50,7 @@ l10n_hr_datev_personalfragebogen Module Project.
     ],
     'data': [
         'views/hr_datev_employee_survey.xml',
+        'views/hr_job.xml',
         'report/hr_datev_employee_survey.xml',
     ],
     'demo': [

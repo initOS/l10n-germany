@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
+        <!-- model.name inherit form view -->
+        <record id="hr_job_survey_form_inherit" model="ir.ui.view">
+            <field name="name">hr.job.inherit.survey.form</field>
+            <field name="model">hr.job</field>
+            <field name="inherit_id" ref="hr.view_hr_job_form"/>
+            <field name="arch" type="xml">
+                <field name="department_id" position="after">
+                    <field name="job_activity_number" />
+                </field>
+            </field>
+        </record>
     </data>
 </odoo>
