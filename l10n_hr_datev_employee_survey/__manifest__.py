@@ -1,5 +1,5 @@
 
-# -*- coding: utf-8 -*-
+
 ###############################################################################
 #
 #    Odoo, Open Source Management Solution
@@ -24,13 +24,13 @@
 {
     'name': 'l10n_hr_datev_personalfragebogen',
     'summary': 'l10n_hr_datev_personalfragebogen Module Project',
-    'version': '1.0',
+    'version': '11.0.1.0.0',
 
     'description': """
 l10n_hr_datev_personalfragebogen Module Project.
     """,
 
-    'author': 'OCA',
+    'author': 'Alexander Schubert, Thore Baden',
     'maintainer': 'OCA',
     'contributors': [''],
 
@@ -46,12 +46,11 @@ l10n_hr_datev_personalfragebogen Module Project.
         'base_iban',
         'partner_firstname',
         'hr_holidays',
-        'hr_contract'
+        'hr_contract',
     ],
     'data': [
         'views/hr_datev_employee_survey.xml',
-        'report/hr_datev_employee_survey.xml'
-        #'views/hr_employee.xml'
+        'report/hr_datev_employee_survey.xml',
     ],
     'demo': [
     ],
