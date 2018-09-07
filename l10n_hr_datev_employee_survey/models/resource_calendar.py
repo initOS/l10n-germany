@@ -3,12 +3,7 @@
 #    __manifest__.py file at the root folder of this module.                  #
 ###############################################################################
 
-<<<<<<< HEAD
-from odoo import models, fields, api, _, exceptions
-from odoo.exceptions import UserError, ValidationError
-=======
 from odoo import models, fields, api
->>>>>>> 9d5e59bbf91b7eec6be48616a3e49ab66112b9e3
 
 
 class ResourceCalendar(models.Model):
