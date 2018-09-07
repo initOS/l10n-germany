@@ -1,18 +1,21 @@
-# -*- coding: utf-8 -*-
 ###############################################################################
 #    License, author and contributors information in:                         #
 #    __manifest__.py file at the root folder of this module.                  #
 ###############################################################################
 
+<<<<<<< HEAD
 from odoo import models, fields, api, _, exceptions
 from odoo.exceptions import UserError, ValidationError
+=======
+from odoo import models, fields, api
+>>>>>>> 9d5e59bbf91b7eec6be48616a3e49ab66112b9e3
 
 
 class ResourceCalendar(models.Model):
     _inherit = 'resource.calendar'
 
     working_hour_type = fields.Selection(
-        string=u'working hour type',
+        string='working hour type',
         selection=[('ft', 'Full Time'), ('pt', 'Part Time')]
     )
     monday_working_hours = fields.Float(
