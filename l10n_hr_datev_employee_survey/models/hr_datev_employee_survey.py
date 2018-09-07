@@ -274,10 +274,10 @@ class HrDatevEmployeeSurvey(models.Model):
         default=fields.Date.context_today,
     )
     wage_hourly_start_date2 = fields.Date(
-        string=u'wage_start_date1',
+        string=u'wage_start_date2',
     )
     wage_hourly_start_date3 = fields.Date(
-        string=u'wage_start_date1',
+        string=u'wage_start_date3',
     )
 
     # vwl tab
