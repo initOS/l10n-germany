@@ -43,9 +43,9 @@ class TestVatStatement(TransactionCase):
             }
         )
         self.env.user.company_id = self.company_parent
-        self.coa.try_loading_for_current_company()
+        self.coa.try_loading()
 
-        self.env["l10n.de.tax.statement"].search([]).unlink()
+        self.env["l10n.de.tax.statement"].search([("state", "!=", "posted")]).unlink()
 
         self.tag_1 = self.env["account.account.tag"].create(
             {
@@ -135,7 +135,7 @@ class TestVatStatement(TransactionCase):
             line.tax_ids.clear()
             line.tax_ids.add(self.tax_2)
         self.invoice_1 = invoice_form.save()
-        self.assertEqual(len(self.invoice_1.line_ids), 5)
+        self.assertEqual(len(self.invoice_1.line_ids), 2)
 
     def test_01_onchange(self):
         daterange_type = self.env["date.range.type"].create({"name": "Type 1"})

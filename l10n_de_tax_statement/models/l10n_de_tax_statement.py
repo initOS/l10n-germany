@@ -243,7 +243,7 @@ class VatStatement(models.Model):
         self.ensure_one()
         tags_map = self._get_tags_map()
         for line in move_lines:
-            for tag in line.tag_ids:
+            for tag in line.tax_tag_ids:
                 tag_map = tags_map.get(tag.id)
                 if tag_map:
                     code, column = tag_map
