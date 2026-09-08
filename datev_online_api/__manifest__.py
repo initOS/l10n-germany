@@ -8,8 +8,8 @@
     "license": "AGPL-3",
     "author": "initOS GmbH, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/l10n-germany",
-    "summary": "Base module for the DATEV Online API which handles authentication and "
-    "offers the framework for all modules built on top",
+    "summary": "Base module for the DATEV Online API which handles authentication "
+    "and offers the framework for all modules built on top",
     "depends": [
         "datev_export",
         "web",
