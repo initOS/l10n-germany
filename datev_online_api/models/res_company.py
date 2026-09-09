@@ -353,7 +353,7 @@ class ResCompany(models.Model):
     def cron_datev_tasks(self):
         """Run regular tasks"""
 
-        for company in self.search([]):
+        for company in self.search([("datev_api", "!=", "disabled")]):
             company._datev_ensure_api_token()
             if company.datev_api_available:
                 company._cron_datev_tasks()
