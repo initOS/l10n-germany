@@ -14,6 +14,7 @@
         "datev_export_dtvf",
     ],
     "data": [
+        "security/ir.model.access.csv",
         "views/datev_export_dtvf_views.xml",
     ],
     "installable": True,

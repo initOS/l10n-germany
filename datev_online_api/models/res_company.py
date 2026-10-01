@@ -306,7 +306,7 @@ class ResCompany(models.Model):
         )
 
         if response.status_code != 200:
-            _logger.error(f"Error on request: {response.text}")
+            _logger.error(f"Error on request: {response.status_code} {response.text}")
             return None
 
         return response.json()

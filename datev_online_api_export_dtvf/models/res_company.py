@@ -23,6 +23,29 @@ class ResCompany(models.Model):
             "test": "https://accounting-extf-files.api.datev.de/platform-sandbox/v3",
         }.get(self.datev_api)
 
+    def datev_upload_dtvf_job(self, location):
+        self.ensure_one()
+        self._datev_ensure_api_token()
+        base_url = self._datev_dtvf_base_url()
+
+        if not base_url:
+            return None
+
+        response = requests.get(
+            url=f"{base_url}/{location}",
+            headers={
+                "Accept": "application/json;charset=utf-8",
+                "Authorization": f"Bearer {self.datev_api_token}",
+                "X-DATEV-Client-Id": self.datev_api_client_id,
+            },
+            timeout=5,
+        )
+
+        if response.status_code == 200:
+            return response.json()
+
+        return None
+
     def datev_upload_dtvf(self, reference_id, filename, data):
         self.ensure_one()
         self._datev_ensure_api_token()
@@ -46,7 +69,13 @@ class ResCompany(models.Model):
             timeout=5,
         )
 
-        return 200 <= response.status_code < 300
+        if 200 <= response.status_code < 300:
+            return response.headers.get("Location")
+
+        if response.headers.get("Content-Type") == "application/problem+json":
+            _logger.debug(response.text)
+
+        return None
 
     def _cron_datev_tasks(self):
         res = super()._cron_datev_tasks()
@@ -55,5 +84,10 @@ class ResCompany(models.Model):
         self.env["datev_export_dtvf.export"].search(
             [("state", "=", "done")]
         ).action_upload()
+
+        # Fetch the state as long as there is no state set
+        self.env["datev_export_dtvf.export.job"].search(
+            [("state", "=", False), ("active", "=", True)]
+        ).datev_check_job()
 
         return res
